@@ -19,8 +19,8 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: '242282114298069',
-    clientSecret: 'be00d61c428a65903916cd5e48156eb6',
+    clientID: process.env.facebookId,
+    clientSecret: process.env.facebookSecret,
     callbackURL: "http://localhost:3000/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'photos', 'email']
   },
@@ -29,8 +29,8 @@ passport.use(new FacebookStrategy({
   }
 ));
 passport.use(new GoogleStrategy({
-  clientID: '713987113089-er978pp011b2d7h10n2r4j68t7c40r18.apps.googleusercontent.com',
-  clientSecret: 'RgdF7MrOYoQ9F4BsI54AOaED',
+  clientID: process.env.googleId,
+  clientSecret: process.env.googleSecret,
   callbackURL: "http://localhost:3000/auth/google/callback"
 },
 function(accessToken, refreshToken, profile, cb) {
