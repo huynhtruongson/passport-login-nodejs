@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Social Media Login
+    body
+        h2(style='color : red')= `Xin chào ${user.displayName}! Bạn đang đăng nhập bằng tài khoản ${user.provider}     `
+            a(href='/logout') Đăng xuất
+        h1 Thời tiết Hồ Chí Minh và Hà nội
+        each location in locations
+            h3= location.name
+            ul 
+                li Nhiệt độ :
+                    =location.main.temp
+                li Độ ẩm : 
+                    =`${location.main.humidity} %`
+                li Mây : 
+                    =`${location.clouds.all} %`
+                li Hướng gió : 
+                    =location.wind.deg 
+                li Tốc độ gió : 
+                    =`${location.wind.speed} m/s`
+                li Tầm nhìn : 
+                    =location.visibility 

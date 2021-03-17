@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous")
+        title Social Media Login
+    style(type="text/css").
+        .social-login {
+            width: 600px;
+            height: 400px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center
+        }
+        .btn {
+            min-width : 250px;
+            text-align : center;
+            outline:none;
+            padding:16px;
+            font-size : 1rem;
+            border:none;
+            color : #fff;
+            border-radius : 8px;
+            box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
+            cursor :pointer
+        }
+        .btn.facebook-btn {
+            background-color : #3578E5
+        }
+        .btn.google-btn {
+            background-color : #cacaca
+        }
+        .icon {
+            margin-right : 8px;
+            font-size : 1.2rem;
+        }
+    body 
+        .social-login 
+            a(href='/auth/facebook')
+                button.facebook-btn.btn
+                    i.fab.fa-facebook.icon
+                    | Đăng nhập với Facebook
+            a(href='/auth/google')
+                button.google-btn.btn
+                    i.fab.fa-google.icon
+                    | Đăng nhập với Google
