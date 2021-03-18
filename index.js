@@ -76,7 +76,7 @@ const checkLogin = (req,res,next) => {
     res.redirect('/login')
 }
 app.get('/',checkLogin,async (req, res) => {
-    const apiKey = '473efef2a8205242cda8d2e7873a7392';
+    const apiKey = process.env.apiWeatherKey;
     const hcmCity = 'ho chi minh city';
     const hanoiCity = 'hanoi';
     const apiUrlHcm = `http://api.openweathermap.org/data/2.5/weather?q=${hcmCity}&appid=${apiKey}&units=metric`;
